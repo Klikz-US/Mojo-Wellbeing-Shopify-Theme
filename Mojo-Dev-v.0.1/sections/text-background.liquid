@@ -1,0 +1,239 @@
+<section
+    class="featured-content--root text-background section-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-js-class="text-background"
+    data-full-width="{{ section.settings.full-width }}"
+>
+    <div class="row">
+        <div
+        class="container  {% if section.settings.mobile_flat %} mobile-flat {% endif %}"
+        style="position: relative; width: 100%;"
+        >
+            <div
+            class="background-image"
+            style="position: {% if section.settings.parallax %} fixed; {% else %} absolute; {% endif %} width: 100%; height: 0; background-position: {{ section.settings.background_pos }}; padding-top: {{ section.settings.container_height }}; background-image: url('{{ section.settings.background_img | img_url: 'x2048' }}'); background-size: cover; background-repeat: no-repeat; {% if section.settings.parallax %} z-index: -1; {% else %} z-index: 0; {% endif %}"
+            ></div>
+
+            <div
+            class="background-overlay"
+            style="position: relative; padding-top: {{ section.settings.container_height }}; top: 0; left: 0; width: 100%; height: 100%; background-image: {% if section.settings.background_float == 'left' %} linear-gradient(90deg, transparent, transparent {{ section.settings.background_width }}%, {{ section.settings.background_color }} {{ section.settings.background_width }}%, {{ section.settings.background_color }}); {% else %} linear-gradient(90deg, {{ section.settings.background_color }}, {{ section.settings.background_color }} {{ section.settings.background_width }}%, transparent {{ section.settings.background_width }}%, transparent); {% endif %} z-index: 1;"
+            ></div>
+
+            <div
+            class="text-container {{ section.settings.text_position }}"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: row; justify-content: {{ section.settings.text_position }}; z-index: 3;"
+            >
+                <div
+                class="text-inner"
+                style="width: {{ section.settings.text_container_width }}%; display: flex; flex-direction: column; justify-content: center;"
+                >
+
+                    <div
+                    class="text-wrap"
+                    style="text-align: {{ section.settings.text_align }}; padding: {{ section.settings.text_inner_padding_ver }}% {{ section.settings.text_inner_padding_hor }}%; background-color: {{ section.settings.text_bg }};"
+                    >
+                        {{ section.settings.content_html }}
+                    
+                        {% if section.settings.link_text != blank %}
+                            <a
+                            class="link"
+                            href="{{ section.settings.link_url }}"
+                            >
+                                {{ section.settings.link_text }}
+                            </a>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Text with Background",
+        "class": "text-with-background",
+        "settings": [
+            {
+                "id": "full-width",
+                "label": "Full width",
+                "type": "checkbox",
+                "default": false
+            },
+            {
+                "type": "text",
+                "id": "container_height",
+                "label": "Container Height",
+                "default": "100vh"
+            },
+            {
+                "type": "range",
+                "id": "text_container_width",
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "unit": "%",
+                "label": "Text Container Width",
+                "default": 50
+            },
+            {
+                "type": "select",
+                "id": "text_position",
+                "label": "Text Position",
+                "options": [
+                    {
+                        "value": "flex-start",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "flex-end",
+                        "label": "Right"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "text_align",
+                "label": "Text Align",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    }
+                ]
+            },
+            {
+                "type": "html",
+                "id": "content_html",
+                "label": "Content HTML",
+                "default": "<div></div>"
+            },
+            {
+                "type": "color",
+                "id": "text_bg",
+                "label": "Text Area Background"
+            },
+            {
+                "type": "range",
+                "id": "text_inner_padding_hor",
+                "min": 0,
+                "max": 50,
+                "step": 1,
+                "unit": "%",
+                "label": "Text Area Horizontal Padding",
+                "default": 0
+            },
+            {
+                "type": "range",
+                "id": "text_inner_padding_ver",
+                "min": 0,
+                "max": 50,
+                "step": 1,
+                "unit": "%",
+                "label": "Text Area Vertical Padding",
+                "default": 0
+            },
+            {
+                "type": "image_picker",
+                "id": "background_img",
+                "label": "Background Image"
+            },
+            {
+                "type": "checkbox",
+                "id": "parallax",
+                "label": "Background Parallax",
+                "default": false
+            },
+            {
+                "type": "range",
+                "id": "background_width",
+                "min": 0,
+                "max": 100,
+                "step": 5,
+                "unit": "%",
+                "label": "Background Width",
+                "default": 50
+            },
+            {
+                "type": "select",
+                "id": "background_pos",
+                "label": "Background Position",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    }
+                ]
+            },
+            {
+                "type": "select",
+                "id": "background_float",
+                "label": "Background Float",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Background Color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "text",
+                "id": "link_text",
+                "label": "Link Text",
+                "default": "Learn More"
+            },
+            {
+                "type": "url",
+                "id": "link_url",
+                "label": "Link URL"
+            },
+            {
+                "id": "mobile_flat",
+                "label": "Mobile Responsive",
+                "type": "checkbox",
+                "default": false
+            }
+        ],
+        "presets": [{
+            "name": "Custom Section",
+            "category": "Developer Custom",
+            "blocks": [
+            ]
+        }]
+    }
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

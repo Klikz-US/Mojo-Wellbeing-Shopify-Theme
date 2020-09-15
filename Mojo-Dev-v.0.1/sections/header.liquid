@@ -1,0 +1,177 @@
+<header
+  class="layout--header spacing--5x"
+  data-section-id="{{ section.id }}"
+  data-section-type="header"
+  data-js-class="Header"
+  {% if section.settings.logo %}
+    data-header--logo-height="{{ section.settings.logo-height-range }}"
+    {% if section.settings.logo-height-range <= 45 %}
+      data-header--logo-type="inline"
+    {% else %}
+      data-header--logo-type="overflowing"
+    {% endif %}
+  {% endif %}
+>
+
+  <noscript>
+    <div class="container">
+      <div class="left-side">
+        {%
+          render 'framework--logo',
+          logo: section.settings.logo,
+          height_range: section.settings.logo-height-range
+        %}
+        {%
+          render 'framework--x-menu',
+          js_class: 'XMenu',
+          overlap_parent: 1,
+          off_canvas: 'right-sidebar',
+          handle: section.settings.menu
+        %}
+      </div>
+      <div class="right-side fw--align--right font--accent">
+        {% if settings.search--show-in-header %}
+          <div class="header--search">
+            <a href="{{ routes.search_url }}">{{ 'general.search.search' | t }}</a>
+          </div>
+        {% endif %}
+
+        {% render 'layout--login' %}
+
+        <div class="cart-link font--accent">
+          <a href="{{ routes.cart_url }}">{{ 'cart.title' | t }}</a>
+        </div>
+      </div>
+    </div>
+  </noscript>
+
+  <div class="header--y-menu-for-off-canvas">
+    {% render 'framework--y-menu', handle: section.settings.menu %}
+  </div>
+
+  <div class="container show-after-js">
+    <div class="left-side">
+      {%
+        render 'framework--logo',
+        logo: section.settings.logo,
+        height_range: section.settings.logo-height-range
+      %}
+      {%
+        render 'framework--x-menu',
+        js_class: 'XMenu',
+        overlap_parent: 1,
+        off_canvas: 'right-sidebar',
+        handle: section.settings.menu
+      %}
+    </div>
+
+    <div class="right-side font--accent">
+      {% if settings.search--show-in-header %}
+        <div class="header--search">
+          <a href="{{ routes.search_url }}">{{ 'general.search.search' | t }}</a>
+        </div>
+      {% endif %}
+
+      {% render 'layout--login' %}
+      {% render 'partial--popup', component: 'link' %}
+
+      <div class="cart-link">
+        {% if settings.cart--type == 'drawer' %}
+          <div class="cart--open-right off-canvas--open" data-off-canvas--open="right-sidebar">
+        {% endif %}
+        <a tabindex="0" class="toggle" href="{{ routes.cart_url }}">
+          {{ 'cart.title' | t }}
+          <span class="number-wrapper" data-item-count="{{ cart.item_count }}">
+          (<span class="count cart--external--total-items">{{ cart.item_count }}</span>)
+          </span>
+        </a>
+        {% if settings.cart--type == 'drawer' %}
+          </div>
+        {% endif %}
+      </div>
+
+      <a
+        class="header--cart-count {% if settings.cart--type == 'drawer' %}off-canvas--open{% endif %} font--accent"
+        tabindex="0"
+        href="{{ routes.cart_url }}"
+        data-off-canvas--open="right-sidebar"
+      >
+        <span class="header--mobile-cart-count count cart--external--total-items">
+          {{ cart.item_count }}
+        </span>
+      </a>
+
+      <div class="off-canvas--open" data-off-canvas--open="left-sidebar" tabindex="0">
+        {% render 'framework--icons', icon: 'menu' %}
+      </div>
+    </div>
+  </div>
+
+</header>
+
+{% if section.settings.logo %}
+  {% assign offset = section.settings.logo-height-range %}
+  {% assign offset_small = section.settings.logo-height-range %}
+
+  {% if offset > 75 %}
+    {% assign offset_small = 75 %}
+  {% endif %}
+
+  {% if offset > 45 %}
+    {% assign offset = offset | plus: 20 %}
+    {% assign offset_small = offset_small | plus: 15 %}
+    {% assign offset = offset | plus: 30 %}
+  {% else %}
+    {% assign offset = 50 %}
+    {% assign offset_small = 50 %}
+    {% assign offset = offset | plus: 60 %}
+  {% endif %}
+
+  {% assign offset_small = offset_small | plus: 30 %}
+
+  <style>
+    header .fw--logo img {
+      height: {{ section.settings.logo-height-range }}px;
+    }
+
+    .layout--main-content {
+      padding-top: {{ offset }}px;
+    }
+
+    @media only screen and (max-width: 767px) {
+      .layout--main-content {
+        padding-top: {{ offset_small }}px;
+      }
+    }
+  </style>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "label": "Custom logo height",
+      "id": "logo-height-range",
+      "type": "range",
+      "min": 15,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 35,
+      "info": "This is referring to the natural height and should be half the height of the image you uploaded to ensure it stays sharp on retina screens."
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

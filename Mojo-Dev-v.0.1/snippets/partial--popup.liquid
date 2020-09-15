@@ -1,0 +1,133 @@
+{% unless template == 'password' %}
+
+  {% assign alt_color = settings.popup--alternative-color %}
+  {% assign bg_color = settings.popup--background-color %}
+  {% assign enabled = settings.popup--enabled %}
+  {% assign days = settings.popup--days %}
+  {% assign days_range = settings.popup--days-range %}
+  {% assign newsletter_title = settings.popup--newsletter-title--rt %}
+  {% assign popup_mode = settings.popup--mode %}
+  {% assign popup_image = settings.popup--image %}
+  {% assign show_image = settings.popup--show-image %}
+  {% assign social_enabled = settings.popup--social-enabled %}
+  {% assign social_title = settings.popup--social-title | escape %}
+
+  {% if enabled %}
+
+    {% if component == 'link' %}
+      <div class="popup--open button--link">{{ 'layout.header.follow' | t }}</div>
+    {% elsif component == 'main' %}
+      <div
+        class="popup--root"
+        data-js-class="Popup"
+        data-show-again-after="{{ days_range }}"
+        data-mode="{{ popup_mode }}"
+        data-popup--image="{{ show_image }}"
+        data-alternative-color="{{ alt_color }}"
+      >
+
+        <div
+          class="popup--container popup--closed"
+          style="{% render 'framework--background-colors', bg_color: bg_color %}"
+        >
+          <div class="popup--wrapper">
+
+            {% if show_image %}
+              <div class="popup--left-column">
+                {% if popup_image %}
+                  <img
+                    class="popup--image"
+                    src="{{ popup_image | img_url: 'x450'  }}"
+                    alt="{{ popup_image.alt }}"
+                  >
+                {% else %}
+                  {%
+                    render "framework--placeholder",
+                    type: "image",
+                    aspect_ratio: 1.3333
+                  %}
+                {% endif %}
+              </div>
+            {% endif %}
+
+            <div class="popup--center-column">
+              {% if newsletter_title.size > 0 %}
+                <div class="popup--newsletter-title font--paragraph">
+                  {{ newsletter_title }}
+                </div>
+              {% endif %}
+
+              <div class="popup--newsletter-form">
+                {% form 'customer' %}
+                  <input
+                    type="hidden"
+                    name="contact[tags]"
+                    value="{{ source }}"
+                  />
+                  <input
+                    type="hidden"
+                    name="contact[first_name]"
+                    value="Subscriber"
+                  />
+                  <input
+                    type="hidden"
+                    name="contact[last_name]"
+                    value="Newsletter"
+                  />
+                  <label for="popup-email" data-item="hidden-text">
+                    {{ 'general.mailing_list.placeholder' | t }}
+                  </label>
+                  <input
+                    type="email"
+                    id="popup-email"
+                    placeholder="{{ 'general.mailing_list.placeholder' | t }}"
+                    name="contact[email]"
+                    required
+                  />
+                  <input
+                    type="submit"
+                    id="popup-submit"
+                    {% if alt_color %}
+                      class="font--secondary-button--inverted"
+                    {% else %}
+                      class="font--button"
+                    {% endif %}
+                    value="{{ 'general.mailing_list.button' | t }}"
+                    name="subscribe"
+                  />
+
+                  {% if form.posted_successfully? or form.errors %}
+                    <script>window.location.hash = '#newsletter';</script>
+                  {% endif %}
+
+                  <div data-item="hidden-text">
+                    {% comment %} remove the below line to display reCAPTCHA badge {% endcomment %}
+                    {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+                  </div>
+                {% endform %}
+              </div>
+            </div>
+
+            {% if social_enabled %}
+              <div class="popup--right-column">
+                {% if newsletter_title.size > 0 %}
+                  <h3 class="font--accent">{{ social_title }}</h3>
+                {% endif %}
+
+                  <div class="popup--social-icons">
+                    {% render 'partial--social-share', view: 'modal' %}
+                  </div>
+              </div>
+            {% endif %}
+
+            <div aria-label="{{ 'popup.close' | t }}" class="popup--close">
+              {% render 'framework--icons', icon: 'cross' %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+
+  {% endif %}
+
+{% endunless %}

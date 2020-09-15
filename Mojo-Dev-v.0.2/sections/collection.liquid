@@ -1,0 +1,153 @@
+{% comment %} Translations {% endcomment %}
+{% assign no_products_t = 'collections.no_products_feedback_html' | t %}
+{% assign title_t = 'collections.placeholder.title' | t %}
+{% assign from_t = 'collections.from' | t %}
+{% assign price_t = 'collections.placeholder.price' | t %}
+
+{% comment %} Variables {% endcomment %}
+{% assign products_per_row = section.settings.products-per-row-range %}
+
+{% assign show_title = false %}
+{% if collection.title.size > 0 %}
+  {% assign show_title = true %}
+{% endif %}
+
+{% assign show_featured_image = false %}
+{% if section.settings.show-featured-image and collection.image %}
+  {% assign show_featured_image = true %}
+{% endif %}
+
+{% assign show_description = false %}
+{% if collection.description.size > 0 %}
+  {% assign show_description = true %}
+{% endif %}
+
+{% paginate collection.products by 24 %}
+
+  <div
+    class="collection--root"
+    data-section-id="{{ section.id }}"
+    data-section-type="collection_page"
+    data-js-class="CollectionPage"
+    data-products-per-row="{{ products_per_row }}"
+  >
+    {% if show_title or show_featured_image or show_description %}
+
+      <header class="collection--header">
+        {% if show_featured_image %}
+          <div class="collection--featured-image-container">
+            <div class="collection--featured-image">
+              {%
+                render "framework--image",
+                image: collection.image,
+                full_width: true
+              %}
+            </div>
+
+            {% if show_title %}
+              <h1 class="collection--title" data-item="section-heading">
+                {{ collection.title }}
+              </h1>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {% unless show_featured_image %}
+          <h1 class="collection--title-no-image" data-item="section-heading">
+            {{ collection.title }}
+          </h1>
+        {% endunless %}
+
+        {% if show_description %}
+          <div
+            class="collection--description rte-content"
+            data-item="paragraph"
+          >
+            {{ collection.description }}
+          </div>
+        {% endif %}
+      </header>
+
+    {% endif %}
+
+    {% if collection.products.size < 1 %}
+      <div class="collection--no-product rte-content">
+        {{ no_products_t }}
+      </div>
+
+      <section class="collection--placeholder-grid">
+        {% for i in (1..6) %}
+          <div class="collection--placeholder">
+            {%
+              render "framework--placeholder",
+              type: "product",
+              aspect_ratio: 1,
+              placeholder_index: i
+            %}
+
+            <h2 data-item="block-heading">
+              {{ title_t }}
+            </h2>
+
+            <p class="product--from" data-item="accent-text">
+              {{ from_t }} {{ price_t }}
+            </p>
+          </div>
+        {% endfor %}
+      </section>
+
+    {% else %}
+      <div class="collection--product-grid">
+        {% for product in collection.products %}
+          {%
+            render 'framework--product--item',
+            product: product,
+            view: 'grid',
+            show_vendor: section.settings.show-vendor
+          %}
+        {% endfor %}
+      </div>
+
+      {% if paginate.pages > 1 %}
+        <footer>
+          <div class="collection--pagination">
+            {% render 'framework--pagination', paginate: paginate %}
+          </div>
+        </footer>
+      {% endif %}
+
+    {% endif %}
+
+  </div>
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Collection page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show-featured-image",
+      "label": "Show collection image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show-vendor",
+      "label": "Show product's vendor name",
+      "default": false,
+      "info": "e.g. Shopify, Apple"
+    },
+    {
+      "label": "Products per row",
+      "id": "products-per-row-range",
+      "type": "range",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    }
+  ]
+}
+{% endschema %}

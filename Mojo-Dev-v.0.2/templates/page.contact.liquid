@@ -1,0 +1,104 @@
+<div class="spacing--3x">
+  <div class="page-wrapper spacing--5 panel">
+    <h1 class="page-title font--heading text-align--center">{{ page.title }}</h1>
+    <div class="spacer spacing--4y"></div>
+
+    <div id="contact-form">
+      {% form 'contact', id: 'contact_page_form' %}
+
+        {% unless form.posted_successfully? %}
+          <div class="rte-content content">
+            {{ page.content }}
+          </div>
+          <div class="spacer spacing--4y"></div>
+        {% endunless %}
+
+        {% if form.posted_successfully? %}
+          <div class="success feedback accent-text">
+            <p>{{ 'contact_page.success_feedback' | t }}</p>
+          </div>
+        {% endif %}
+
+        {% if form.errors %}
+          <div class="error feedback accent-text">
+            <p>{{ 'contact_page.error_feedback' | t }}:</p>
+            <ul>
+            {% for field in form.errors %}
+              <li>
+                {{ field | capitalize | replace: 'Body', 'Message' }} {{ form.errors.messages[field] }}
+              </li>
+            {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {% unless form.posted_successfully? %}
+
+        <p>
+          <label for="contactFormName">{{ 'contact_page.name' | t }}:</label>
+          <input
+            class="styled-input{% if form.errors contains 'name' %} error{% endif %}"
+            type="text"
+            id="contactFormName"
+            name="contact[name]"
+            value="{{ contact.fields.name }}"
+          />
+        </p>
+        <p>
+          <label for="contactFormEmail">{{ 'contact_page.email' | t }}:</label>
+          <input
+            class="styled-input{% if form.errors contains 'email' %} error{% endif %}"
+            type="email"
+            id="contactFormEmail"
+            name="contact[email]"
+            value="{{ contact.fields.email }}"
+            required
+          />
+        </p>
+        <p>
+          <label for="contactFormTelephone">{{ 'contact_page.phone' | t }}:</label>
+          <input
+            class="styled-input{% if form.errors contains 'phone' %} error{% endif %}"
+            type="tel"
+            id="contactFormTelephone"
+            name="contact[phone]"
+            value="{{ contact.fields.phone }}"
+          />
+        </p>
+        <p>
+          <label for="contactFormMessage">{{ 'contact_page.message' | t }}:</label>
+          <textarea
+            class="styled-input{% if form.errors contains 'body' %} error{% endif %}"
+            rows="10"
+            cols="60"
+            id="contactFormMessage"
+            name="contact[body]"
+            required
+          >{{ contact.fields.body }}</textarea>
+        </p>
+        <p>
+          <input
+            class="button styled-submit"
+            type="submit"
+            id="contactFormSubmit"
+            value="{{ 'contact_page.button' | t }}"
+          />
+        </p>
+
+        {% endunless %}
+
+        {% if form.posted_successfully? or form.errors %}
+          <script>
+            window.location.hash = '#contact-form';
+          </script>
+        {% endif %}
+
+        <div data-item="hidden-text">
+          {% comment %} remove the below line to display reCAPTCHA badge {% endcomment %}
+          {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+        </div>
+      {% endform %}
+    </div>
+
+  </div>
+</div>

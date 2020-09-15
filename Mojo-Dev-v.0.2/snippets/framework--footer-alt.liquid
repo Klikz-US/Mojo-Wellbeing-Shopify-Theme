@@ -1,0 +1,61 @@
+<div class="footer--alt">
+    <div class="footer--alt-inner">
+        <div class="footer--alt-close">
+            <span class="footer--alt-close-btn">X</span>
+        </div>
+        
+        <div class="footer--alt-wrap">
+            <p class="footer--alt-text">Join the Waiting List</p>
+        </div>
+        <div class="footer--alt-wrap footer--subscribe">
+            {% form 'customer', id: 'footer_form' %}
+                {% if form.errors %}
+                    <p class="error feedback">
+                    {% for field in form.errors %}
+                        {{ field }} {{ form.errors.messages[field] }}
+                    {% endfor %}
+                    </p>
+                {% endif %}
+
+                <div class="footer--form-container">
+                    <input type="hidden" name="contact[tags]" value="newsletter" />
+                    <input
+                    type="hidden"
+                    name="contact[first_name]"
+                    value="Newsletter"
+                    />
+                    <input
+                    type="hidden"
+                    name="contact[last_name]"
+                    value="Subscriber"
+                    />
+                    <label for="footer-email" data-item="hidden-text">
+                    {{ 'layout.footer.newsletter_placeholder' | t }}
+                    </label>
+                    <input
+                    class="small"
+                    id="footer-email"
+                    type="email"
+                    placeholder="{{ 'layout.footer.newsletter_placeholder' | t }}"
+                    name="contact[email]"
+                    />
+                    <input
+                    type="submit"
+                    class="font--button prefix"
+                    value="{{ 'layout.footer.newsletter_button' | t }}"
+                    name="subscribe"
+                    />
+                </div>
+
+                {% if form.posted_successfully? or form.errors %}
+                    <script>window.location.hash = '#feedback-bar--newsletter';</script>
+                {% endif %}
+
+                <div data-item="hidden-text">
+                    {% comment %} remove the below line to display reCAPTCHA badge {% endcomment %}
+                    {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+                </div>
+                {% endform %}
+        </div>
+    </div>
+</div>
