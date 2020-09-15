@@ -1,0 +1,44 @@
+.soundest-form-simple-outer {
+	max-width: 475px !important;
+}
+
+.soundest-form-background-image {
+	width: 100%;
+}
+
+.soundest-form-simple-content-outer {
+	padding: 0;
+}
+
+.soundest-form-simple-headline.soundest-form-simple-state-success-subscribed {
+	margin: 0 !important;
+}
+
+.soundest-form-simple-content-inner {
+	background-color: #d1263a;
+}
+
+.soundest-form-background-image-inner-block {
+	padding: 70px;
+}
+
+.soundest-form-simple-headline {
+	margin: 30px;
+}
+
+.soundest-form-simple-field-error-invalid {
+	max-width: 400px;
+	margin: auto;
+}
+
+.soundest-form-simple-error-empty {
+	text-align: center;
+}
+
+.soundest-form-simple-submit {
+	max-width: 60%;
+	margin-left: 20% !important;
+	margin-right: 20% !important;
+	margin-top: 50px !important;
+	margin-bottom: 30px !important;
+}
