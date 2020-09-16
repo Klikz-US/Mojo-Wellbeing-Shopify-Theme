@@ -1,0 +1,487 @@
+<section
+    class="featured-content--root text-background section-{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-js-class="text-background"
+    data-full-width="{{ section.settings.full-width }}"
+>
+
+{% for block in section.blocks %}
+    {% if block.type == "text-image" %}
+        <div class="row">
+            <div
+            class="container"
+            style="position: relative; width: 100%; height: {{ block.settings.iwt_height }}; display: flex; flex-direction: row; flex-wrap: wrap; background-color: {{ block.settings.iwt_bg }};"
+            >
+                <div
+                class="container-image asterisk-vertical"
+                style="height: 100%; width: {{ block.settings.iwt_img_con_width }}%; display: flex; flex-direction: column; justify-content: center; position: relative;"
+                >
+                    <div
+                    class="image-wrap"
+                    style="max-width: {{ block.settings.iwt_img_width | plus: 40 }}px; padding: 20px; margin: auto;"
+                    >
+                        {% assign iwt_img_width = 'x' | append: block.settings.iwt_img_width %}
+                        <img
+                        src="{{ block.settings.iwt_img | img_url: iwt_img_width }}"
+                        width="{{ block.settings.iwt_img_width }}"
+                        height="{{ auto }}"
+                        >
+                    </div>
+                </div>
+
+                <div
+                class="container-text"
+                style="height: 100%; width: {{ 100 | minus: block.settings.iwt_img_con_width }}%; padding: {{ block.settings.iwt_text_padding_ver }}% {{ block.settings.iwt_text_padding_hor }}%; display: flex; flex-direction: column; justify-content: center;"
+                >
+                    <div
+                    class="text-wrap"
+                    >
+                        {{ block.settings.iwt_text }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% elsif block.type == "icon-grid" %}
+        <div class="row">
+            <div
+            class="container"
+            style="position: relative; width: 100%; padding: {{ block.settings.grid_con_padding_ver }}% {{ block.settings.grid_con_padding_hor }}%; background-color: {{ block.settings.grid_con_bg }};"
+            >
+                {{ block.settings.grid_header }}
+                        
+                <div
+                class="grid-wrap"
+                style="position: relative; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); grid-column-gap: {{ block.settings.grid_gap }}; max-width: {{ block.settings.grid_con_max_width }}; margin: auto;"
+                >
+                    <div
+                    class="grid"
+                    >
+                        <div
+                        class="grid-inner"
+                        >
+                            <img
+                            class="grid-image"
+                            src="{{ block.settings.grid_img_1 | img_url: 'x400' }}"
+                            >
+                            <p style="margin-top: 1rem; text-align: center;">{{ block.settings.grid_title_1 }}</p>
+                        </div>
+                    </div>
+
+                    <div
+                    class="grid"
+                    >
+                        <div
+                        class="grid-inner"
+                        >
+                            <img
+                            class="grid-image"
+                            src="{{ block.settings.grid_img_2 | img_url: 'x400' }}"
+                            >
+                            <p style="margin-top: 1rem; text-align: center;">{{ block.settings.grid_title_2 }}</p>
+                        </div>
+                    </div>
+
+                    <div
+                    class="grid"
+                    >
+                        <div
+                        class="grid-inner"
+                        >
+                            <img
+                            class="grid-image"
+                            src="{{ block.settings.grid_img_3 | img_url: 'x400' }}"
+                            >
+                            <p style="margin-top: 1rem; text-align: center;">{{ block.settings.grid_title_3 }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% if block.settings.content_html != blank %}
+            <div class="row">
+                <div
+                class="container {% if block.settings.mobile_flat %} mobile-flat {% endif %}"
+                style="position: relative; width: 100%;"
+                >
+                    <div
+                    class="background-image"
+                    style="position: {% if block.settings.parallax %} fixed; {% else %} absolute; {% endif %} width: 100%; height: 0; background-position: {{ block.settings.background_pos }}; padding-top: {{ block.settings.container_height }}; background-image: url('{{ block.settings.background_img | img_url: 'x2048' }}'); background-size: cover; background-repeat: no-repeat; {% if block.settings.parallax %} z-index: -1; {% else %} z-index: 0; {% endif %}"
+                    ></div>
+
+                    <div
+                    class="background-overlay"
+                    style="position: relative; padding-top: {{ block.settings.container_height }}; top: 0; left: 0; width: 100%; height: 100%; background-image: {% if block.settings.background_float == 'left' %} linear-gradient(90deg, transparent, transparent {{ block.settings.background_width }}%, {{ block.settings.background_color }} {{ block.settings.background_width }}%, {{ block.settings.background_color }}); {% else %} linear-gradient(90deg, {{ block.settings.background_color }}, {{ block.settings.background_color }} {{ block.settings.background_width }}%, transparent {{ block.settings.background_width }}%, transparent); {% endif %} z-index: 1;"
+                    ></div>
+
+                    <div
+                    class="text-container {{ block.settings.text_position }}"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: row; justify-content: {{ block.settings.text_position }}; z-index: 2;"
+                    >
+                        <div
+                        class="text-inner"
+                        style="width: {{ block.settings.text_container_width }}%; display: flex; flex-direction: column; justify-content: center;"
+                        >
+                            <div
+                            class="text-wrap"
+                            style="text-align: {{ block.settings.text_align }}; padding: {{ block.settings.text_inner_padding_ver }}% {{ block.settings.text_inner_padding_hor }}%; background-color: {{ block.settings.text_bg }};"
+                            >
+                                {{ block.settings.content_html }}
+
+                                {% if block.settings.link_text != blank %}
+                                <a
+                                class="link"
+                                href="{{ block.settings.link_url }}"
+                                >
+                                    {{ block.settings.link_text }}
+                                </a>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endif %}
+
+{% endfor %}
+</section>
+
+{% schema %}
+    {
+        "name": "Custom Page Section",
+        "class": "framework--text-with-background",
+        "settings": [
+            {
+                "id": "full-width",
+                "label": "Full width",
+                "type": "checkbox",
+                "default": false
+            }
+        ],        
+        "blocks": [
+            {
+                "type": "text-image",
+                "name": "Image with Text",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "iwt_img",
+                        "label": "Image"
+                    },
+                    {
+                        "type": "color",
+                        "id": "iwt_bg",
+                        "label": "Background Color",
+                        "default": "#ffffff"
+                    },
+                    {
+                        "type": "text",
+                        "id": "iwt_height",
+                        "label": "Container Height",
+                        "default": "100vh"
+                    },
+                    {
+                        "type": "range",
+                        "id": "iwt_img_con_width",
+                        "min": 0,
+                        "max": 100,
+                        "step": 2,
+                        "unit": "%",
+                        "label": "Image Container Width",
+                        "default": 50
+                    },
+                    {
+                        "type": "text",
+                        "id": "iwt_img_width",
+                        "label": "Image Width",
+                        "default": "300"
+                    },
+                    {
+                        "type": "html",
+                        "id": "iwt_text",
+                        "label": "Text HTML",
+                        "default": "<div></div>"
+                    },
+                    {
+                        "type": "range",
+                        "id": "iwt_text_padding_hor",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "unit": "%",
+                        "label": "Container Horizontal Padding",
+                        "default": 10
+                    },
+                    {
+                        "type": "range",
+                        "id": "iwt_text_padding_ver",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "unit": "%",
+                        "label": "Container Vertical Padding",
+                        "default": 10
+                    }
+                ]
+            },
+            {
+                "type": "icon-grid",
+                "name": "Icon Grid", 
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "grid_con_max_width",
+                        "label": "Container Max Width",
+                        "default": "1000px"
+                    },
+                    {
+                        "type": "color",
+                        "id": "grid_con_bg",
+                        "label": "Container Background Color",
+                        "default": "#ffffff"
+                    },
+                    {
+                        "type": "range",
+                        "id": "grid_con_padding_hor",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "unit": "%",
+                        "label": "Container Horizontal Padding",
+                        "default": 10
+                    },
+                    {
+                        "type": "range",
+                        "id": "grid_con_padding_ver",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "unit": "%",
+                        "label": "Container Vertical Padding",
+                        "default": 10
+                    },
+                    {
+                        "type": "html",
+                        "id": "grid_header",
+                        "label": "Grid Header",
+                        "default": "<div></div>"
+                    },
+                    {
+                        "type": "text",
+                        "id": "grid_gap",
+                        "label": "Grid Column Gap",
+                        "default": "5%"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "grid_img_1",
+                        "label": "Grid Image 1"
+                    },
+                    {
+                        "type": "text",
+                        "id": "grid_title_1",
+                        "label": "Grid Title 1",
+                        "default": "Grid Title 1"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "grid_img_2",
+                        "label": "Grid Image 2"
+                    },
+                    {
+                        "type": "text",
+                        "id": "grid_title_2",
+                        "label": "Grid Title 2",
+                        "default": "Grid Title 2"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "grid_img_3",
+                        "label": "Grid Image 3"
+                    },
+                    {
+                        "type": "text",
+                        "id": "grid_title_3",
+                        "label": "Grid Title 3",
+                        "default": "Grid Title 3"
+                    }
+                ]                
+            },
+            {
+                "type": "text-background",
+                "name": "Text with Background",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "container_height",
+                        "label": "Container Height",
+                        "default": "100vh"
+                    },
+                    {
+                        "type": "range",
+                        "id": "text_container_width",
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "unit": "%",
+                        "label": "Text Container Width",
+                        "default": 50
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_position",
+                        "label": "Text Position",
+                        "options": [
+                            {
+                                "value": "flex-start",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "flex-end",
+                                "label": "Right"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_align",
+                        "label": "Text Align",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "color",
+                        "id": "text_bg",
+                        "label": "Text Area Background"
+                    },
+                    {
+                        "type": "range",
+                        "id": "text_inner_padding_hor",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "unit": "%",
+                        "label": "Text Area Horizontal Padding",
+                        "default": 0
+                    },
+                    {
+                        "type": "range",
+                        "id": "text_inner_padding_ver",
+                        "min": 0,
+                        "max": 50,
+                        "step": 1,
+                        "unit": "%",
+                        "label": "Text Area Vertical Padding",
+                        "default": 0
+                    },
+                    {
+                        "type": "html",
+                        "id": "content_html",
+                        "label": "Content HTML",
+                        "default": "<div></div>"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "background_img",
+                        "label": "Background Image"
+                    },
+                    {
+                        "type": "checkbox",
+                        "id": "parallax",
+                        "label": "Background Parallax",
+                        "default": false
+                    },
+                    {
+                        "type": "range",
+                        "id": "background_width",
+                        "min": 0,
+                        "max": 100,
+                        "step": 5,
+                        "unit": "%",
+                        "label": "Background Width",
+                        "default": 50
+                    },
+                    {
+                        "type": "select",
+                        "id": "background_pos",
+                        "label": "Background Position",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "select",
+                        "id": "background_float",
+                        "label": "Background Float",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "left"
+                    },
+                    {
+                        "type": "color",
+                        "id": "background_color",
+                        "label": "Background Color",
+                        "default": "#ffffff"
+                    },
+                    {
+                        "type": "text",
+                        "id": "link_text",
+                        "label": "Link Text",
+                        "default": "Learn More"
+                    },
+                    {
+                        "type": "url",
+                        "id": "link_url",
+                        "label": "Link URL"
+                    },
+                    {
+                        "id": "mobile_flat",
+                        "label": "Mobile Responsive",
+                        "type": "checkbox",
+                        "default": false
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,175 @@
+{% comment %} Translations {% endcomment %}
+{% assign product_title_t = 'general.social.product_title' | t %}
+{% assign facebook_share_t = 'general.social.facebook.share' | t %}
+{% assign twitter_share_t = 'general.social.twitter.share' | t %}
+{% assign pinterest_share_t = 'general.social.pinterest.share' | t %}
+{% assign email_share_t = 'general.social.email_title' | t %}
+{% assign link_title_t = 'general.social.link_title' | t %}
+{% assign copied_t = 'general.social.copied' | t %}
+
+{% comment %} Variables {% endcomment %}
+{% assign kickstarter_url = settings.social--kickstarter--url | escape %}
+{% assign facebook_url = settings.social--facebook--url | escape %}
+{% assign twitter_url = settings.social--twitter--url | escape %}
+{% assign pinterest_url = settings.social--pinterest--url | escape %}
+{% assign instagram_url = settings.social--instagram--url | escape %}
+{% assign vimeo_url = settings.social--vimeo--url | escape %}
+{% assign youtube_url = settings.social--youtube--url | escape %}
+{% capture shareurl %}{{ shop.url }}{{ product.url }}{% endcapture %}
+
+<div class="social-share--root" data-view="{{ view }}">
+
+  {% case view %}
+
+    {% when 'modal' %}
+      {% if kickstarter_url.size > 0 %}
+        <a
+          class="social-share--item-kickstarter"
+          href="{{ kickstarter_url }}"
+          title="Kickstarter"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'kickstarter' %}
+        </a>
+      {% endif %}
+
+      {% if facebook_url.size > 0 %}
+        <a
+          class="social-share--item-facebook"
+          href="{{ facebook_url }}"
+          title="Facebook"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'facebook' %}
+        </a>
+      {% endif %}
+
+      {% if instagram_url.size > 0 %}
+        <a
+          class="social-share--item-instagram"
+          href="{{ instagram_url }}"
+          title="Instagram"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'instagram' %}
+        </a>
+      {% endif %}
+
+      {% if twitter_url.size > 0 %}
+        <a
+          class="social-share--item-twitter"
+          href="{{ twitter_url }}"
+          title="Twitter"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'twitter' %}
+        </a>
+      {% endif %}
+
+      {% if vimeo_url.size > 0 %}
+        <a
+          class="social-share--item-vimeo"
+          href="{{ vimeo_url }}"
+          title="Vimeo"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'vimeo' %}
+        </a>
+      {% endif %}
+
+      {% if pinterest_url.size > 0 %}
+        <a
+          class="social-share--item-pinterest"
+          href="{{ pinterest_url }}"
+          title="Pinterest"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'pinterest' %}
+        </a>
+      {% endif %}
+
+      {% if youtube_url.size > 0 %}
+        <a
+          class="social-share--item-youtube"
+          href="{{ youtube_url }}"
+          title="Youtube"
+          aria-hidden="true"
+          target="_blank"
+        >
+          {% render 'framework--icons', icon: 'youtube' %}
+        </a>
+      {% endif %}
+
+    {% when 'product' %}
+      <p class="social-share--product-title" data-item="block-heading">
+        {{ product_title_t }}
+      </p>
+
+      {% if settings.social--share-facebook %}
+        <a
+          class="social-share--item-facebook"
+          href="https://www.facebook.com/sharer.php?u={{ shareurl }}&t={{ product.title | strip_html | escape | replace: ' ', '%20' }}"
+          data-item="accent-text"
+        >
+          {% render 'framework--icons', icon: 'facebook' %}
+          <span>{{ facebook_share_t }}</span>
+        </a>
+      {% endif %}
+
+      {% if settings.social--share-twitter %}
+        <a
+          class="social-share--item-twitter"
+          href="https://twitter.com/intent/tweet?text=Check%20out%20this%20{% if template contains 'article' or template contains 'blog' %}blog%20post{% elsif template contains 'product' %}product{% endif %}:+{{ shareurl }}"
+          data-item="accent-text"
+        >
+          {% render 'framework--icons', icon: 'twitter' %}
+          <span>{{ twitter_share_t }}</span>
+        </a>
+      {% endif %}
+
+      {% if settings.social--share-pinterest %}
+        <a
+          class="social-share--item-pinterest"
+          href="https://pinterest.com/pin/create/button/?url={{ shareurl }}&media={{ product.featured_media | img_url: 'original' }}&description={{ product.title | strip_html | escape | replace: ' ', '%20' }}"
+          data-item="accent-text"
+          count-layout="none"
+        >
+          {% render 'framework--icons', icon: 'pinterest' %}
+          <span>{{ pinterest_share_t }}</span>
+        </a>
+      {% endif %}
+
+      {% if settings.social--share-email %}
+        <a
+          class="social-share--item-email"
+          href="mailto:?Subject={{ product.title | url_escape }}&body={{ shop.url | url_escape }}{{ product.url | url_escape }}"
+          data-item="accent-text"
+        >
+          {% render 'framework--icons', icon: 'mail' %}
+          <span>{{ email_share_t }}</span>
+        </a>
+      {% endif %}
+
+      {% if settings.social--share-link %}
+        <a
+          class="social-share--item-copy"
+          href="#"
+          data-item="accent-text"
+        >
+          {% render 'framework--icons', icon: 'link' %}
+          <span>{{ link_title_t }}</span>
+          <div class="social-share--copy-text" data-item="light-accent-text">
+            {{ copied_t }}
+          </div>
+        </a>
+      {% endif %}
+
+  {% endcase %}
+
+</div>

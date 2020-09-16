@@ -1,0 +1,116 @@
+<!doctype html>
+<!--[if IE 9]> <html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+  <html class="no-js" lang="{{ request.locale.iso_code }}">
+<!--<![endif]-->
+
+  <head>
+    <!-- Maker Theme - Version 5.5.0 by Troop Themes - https://troopthemes.com/ -->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    {% if page_description %}
+      <meta name="description" content="{{ page_description }}">
+    {% endif %}
+
+    {% render 'framework--social-meta-tags' %}
+
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com">
+
+    {% if settings.favicon != nil %}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {% endif %}
+
+    {% if template == 'index' %}
+      <title>{{ page_title }}</title>
+    {% elsif template == 'password' %}
+      <title>{{ shop.name }}</title>
+    {% else %}
+      <title>{{ page_title }} | {{ shop.name }}</title>
+    {% endif %}
+
+    {{ content_for_header }}
+
+    {% render 'framework--css-variables' %}
+    {% render 'partial--css-variables' %}
+
+    {{ "theme.css" | asset_url | stylesheet_tag }}
+    
+    {{ 'theme--customizations.css' | asset_url | stylesheet_tag }}
+    {{ 'jquery-3.5.1.min.js' | asset_url | script_tag }}
+    {{ 'theme--customizations.js' | asset_url | script_tag }}
+
+    {% render 'partial--js-variables' %}
+
+    {{ 'lazysizes.min.js' | asset_url | script_tag }}
+
+    {% if template contains 'customers' %}
+      {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+      {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+    {% endif %}
+
+    {{ "theme.min.js" | asset_url | script_tag }}
+  </head>
+
+  <body
+    class="template--{{ template | split: '.' | first | remove: '_' | replace: '/', '--' }} page--{{ page_title | handle }}{% if customer %} customer-logged-in{% endif %}"
+    data-theme-id="765"
+    data-theme-name="Maker"
+    data-theme-version="5.5.0"
+    {% if template contains 'customers' %}
+      data-account-template="true"
+    {% endif %}
+  >
+    <a data-item="a11y-button" href='#main-content'>
+      {{ 'general.skip_link' | t }}
+    </a>
+
+    <div
+      class="off-canvas--viewport"
+      data-js-class="OffCanvas"
+      data-off-canvas--state="closed"
+    >
+      <div class="off-canvas--overlay"></div>
+      <div class="off-canvas--close">
+        {% render 'framework--icons', icon: 'cross' %}
+      </div>
+
+      <div class="off-canvas--main-content">
+
+        {% unless template == 'password' %}
+          {% section 'announcement' %}
+          {% section 'header' %}
+        {% endunless %}
+
+        <main role="main" class="layout--main-content" id="main-content">
+          {{ content_for_layout }}
+        </main>
+
+        {% section 'framework--footer' %}
+        {% render 'partial--popup', component: 'main' %}
+      </div>
+
+      <div class="off-canvas--right-sidebar">
+        {% if settings.cart--type == 'drawer' %}
+          <div class="off-canvas--focus-trigger" tabindex="0"></div>
+          {% render 'framework--cart', view: 'mobile' %}
+          <div class="off-canvas--focus-trigger" tabindex="0"></div>
+        {% endif %}
+      </div>
+
+      <div class="off-canvas--left-sidebar">
+        <div class="off-canvas--focus-trigger" tabindex="0"></div>
+        {% render 'layout--mobile-nav' %}
+        <div class="off-canvas--focus-trigger" tabindex="0"></div>
+      </div>
+    </div>
+
+    {% render 'framework--feedback-bar' %}
+
+    {% render 'framework--search', view: 'modal' %}
+
+    {% render 'framework--modal' %}
+  </body>
+</html>

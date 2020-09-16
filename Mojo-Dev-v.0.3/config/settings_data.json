@@ -1,0 +1,1446 @@
+{
+  "current": {
+    "color--accent": "#d1263a",
+    "bg-color--body": "#ffffff",
+    "color--body": "#d1263a",
+    "color--alternative": "#ffffff",
+    "bg-color--panel": "#fbf8f6",
+    "color--important": "#402578",
+    "color--button": "#ffffff",
+    "bg-color--button": "rgba(0,0,0,0)",
+    "color--header": "#ffffff",
+    "color--footer": "#ffffff",
+    "bg-color--footer": "",
+    "bg-color--announcement": "#d1263a",
+    "announcement--alternative-text": false,
+    "color--collection--title": "#d1263a",
+    "typography--heading": "open_sans_i6",
+    "typography--heading--uppercase": false,
+    "typography--heading--size": "large",
+    "typography--accent": "open_sans_n4",
+    "typography--paragraph": "open_sans_n4",
+    "typography--paragraph--size": "small",
+    "search--show-in-header": false,
+    "search--show-articles": true,
+    "search--show-pages": true,
+    "social--instagram--url": "https:\/\/www.instagram.com\/mojowellbeing",
+    "social--facebook--url": "https:\/\/www.facebook.com\/mojowellbeing",
+    "social--youtube--url": "",
+    "social--vimeo--url": "",
+    "social--pinterest--url": "https:\/\/www.pinterest.com\/mojowellbeing",
+    "social--twitter--url": "",
+    "social--kickstarter--url": "",
+    "social--share-image": "",
+    "social--share-products": false,
+    "social--share-facebook": false,
+    "social--share-twitter": false,
+    "social--share-pinterest": false,
+    "social--share-email": true,
+    "social--share-link": true,
+    "popup--enabled": false,
+    "popup--mode": "auto",
+    "popup--days-range": 7,
+    "popup--background-color": "light",
+    "popup--alternative-color": false,
+    "popup--show-image": true,
+    "popup--image": "",
+    "popup--newsletter-title--rt": "<p>Sign up to our newsletter and we'll keep you posted with news and deals each week!<\/p>",
+    "popup--social-title": "Follow us",
+    "popup--social-enabled": true,
+    "favicon": "",
+    "hide-tags": "featured, pinned",
+    "cart--type": "drawer",
+    "cart--show-note": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo-height-range": 80,
+          "menu": "main-menu"
+        }
+      },
+      "framework--footer": {
+        "type": "framework--footer",
+        "blocks": {
+          "1584642445690": {
+            "type": "about",
+            "settings": {
+              "about-title": "",
+              "text": "<p>Be the first one to find out about product announcements, news and updates.<\/p>\n<p><br>&copy; 2020 Mojo&nbsp;Wellbeing. &nbsp;All rights reserved.<\/p>",
+              "subscribe--show-social-icons": true
+            }
+          },
+          "1584642450700": {
+            "type": "subscribe",
+            "settings": {
+              "newsletter--heading": "",
+              "newsletter--info": "",
+              "subscribe--show-newsletter": true
+            }
+          }
+        },
+        "block_order": [
+          "1584642445690",
+          "1584642450700"
+        ],
+        "settings": {
+          "show-currency-selector": false,
+          "show-locale-selector": false,
+          "show-payment-icons": false
+        }
+      },
+      "product": {
+        "type": "product",
+        "settings": {
+          "smart-payment-button": true,
+          "variant-style": "dropdowns",
+          "swatches-enabled": false,
+          "product-unavailable-form-show": false,
+          "low-in-stock-amount": 0,
+          "modal-enabled": true,
+          "hide-variant-media": false,
+          "loop-enabled": false,
+          "product-size-chart-enabled": false,
+          "product-size-chart-option": "size",
+          "product-size-chart-page-content": ""
+        }
+      },
+      "collection": {
+        "type": "collection",
+        "settings": {
+          "show-featured-image": true,
+          "show-vendor": false,
+          "products-per-row-range": 3
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "enabled": false,
+          "home-page-only": false,
+          "icon": "",
+          "text": "Add your announcement message with a bit more length",
+          "link": ""
+        }
+      },
+      "text-background": {
+        "type": "text-background",
+        "settings": {
+          "full-width": false,
+          "container_height": "50",
+          "text_container_width": 50,
+          "text_position": "left",
+          "text_align": "left",
+          "content_html": "<div><\/div>",
+          "text_bg": "",
+          "text_inner_padding_hor": 0,
+          "text_inner_padding_ver": 0,
+          "background_img": "",
+          "parallax": false,
+          "background_width": 50,
+          "background_pos": "left",
+          "background_float": "left",
+          "background_color": "#ffffff",
+          "link_text": "Learn More",
+          "link_url": "",
+          "mobile_flat": false
+        }
+      },
+      "framework--product-page": {
+        "type": "framework--product-page",
+        "blocks": {
+          "1599987357947": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 50,
+              "text_position": "flex-end",
+              "text_align": "left",
+              "text_bg": "",
+              "text_inner_padding_hor": 20,
+              "text_inner_padding_ver": 0,
+              "content_html": "<h4>Take on menopause with confidence<\/h4>\n\n<h5>Hot Flash Relief + Multivitamin Supplement <\/h5>\n\n<p>* We’re scientists, not magicians. Mojo Wellbeing has been formulated with ingredients clinically proven to provide relief for hot flashes.<\/p>\n\n<p>* Menopause is more than hot flashes. So Mojo Wellbeing is packed with a blend of bone density supporting calcium &amp; vitamin D along with a blend of vitamins A, C, , E and F to support women’s health and overall wellbeing, boosting beauty from the inside out.<\/p>\n\n<p>* And we didn’t stop there. Mojo Wellbeing also contains ashwaghanda, an adaptogen that works naturally with your body to balance mood fluctuations.<\/p>\n\n<p>* Women go through enough hormonal changes as it is, which is why Mojo Wellbeing is hormone-free. Keeping it natural, vegan and cruelty-free.<\/p>\n<br>\n<a class=\"button\" onclick=\"Privy('show', 1756782);\">JOIN THE WAITLIST<\/a>",
+              "background_img": "shopify:\/\/shop_images\/MOJO_PACK_3.jpg",
+              "parallax": false,
+              "background_width": 50,
+              "background_pos": "left",
+              "background_float": "left",
+              "background_color": "#f9f4f0",
+              "link_text": "",
+              "link_url": "",
+              "mobile_flat": true
+            }
+          },
+          "1599987634908": {
+            "type": "icon-grid",
+            "settings": {
+              "grid_con_max_width": "900px",
+              "grid_con_bg": "#ffffff",
+              "grid_con_padding_hor": 10,
+              "grid_con_padding_ver": 5,
+              "grid_header": "<h4 style=\"text-align: center; margin-bottom: 3rem;\">Only the Good Stuff<\/h4>",
+              "grid_gap": "20%",
+              "grid_img_1": "shopify:\/\/shop_images\/icon-1.png",
+              "grid_title_1": "Produced using vegan ingredients and plant-based botanicals.",
+              "grid_img_2": "shopify:\/\/shop_images\/icon-2.png",
+              "grid_title_2": "Certified nontoxic and sustainably made natural extracts",
+              "grid_img_3": "shopify:\/\/shop_images\/icon-3.png",
+              "grid_title_3": "Committed to no animal testing. Certified cruelty-free by PETA."
+            }
+          },
+          "1599987534437": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 50,
+              "text_position": "flex-end",
+              "text_align": "left",
+              "text_bg": "",
+              "text_inner_padding_hor": 25,
+              "text_inner_padding_ver": 0,
+              "content_html": "<h4>Don’t let menopause take your mojo<\/h4>\n\n<p>Our upcoming range of products are made to help you deal with all the ways menopause can affect your mind, body and soul. Because we know menopause doesn’t end with hot flashes.<\/p>",
+              "background_img": "shopify:\/\/shop_images\/MOJO_PACK_2.jpg",
+              "parallax": false,
+              "background_width": 100,
+              "background_pos": "left",
+              "background_float": "left",
+              "background_color": "#ffffff",
+              "link_text": "",
+              "link_url": "",
+              "mobile_flat": true
+            }
+          },
+          "1599987980514": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 70,
+              "text_position": "center",
+              "text_align": "center",
+              "text_bg": "#ffffff",
+              "text_inner_padding_hor": 2,
+              "text_inner_padding_ver": 10,
+              "content_html": "<h3>Menopause happens to the best of us (ok, all of us). <br>It’s time to get through it with confidence.<\/h3>",
+              "background_img": "shopify:\/\/shop_images\/MOJO-PATTER-2.jpg",
+              "parallax": false,
+              "background_width": 35,
+              "background_pos": "left",
+              "background_float": "left",
+              "background_color": "#f9f4f0",
+              "link_text": "Why we exist",
+              "link_url": "shopify:\/\/pages\/why-we-exist",
+              "mobile_flat": true
+            }
+          }
+        },
+        "block_order": [
+          "1599987357947",
+          "1599987634908",
+          "1599987534437",
+          "1599987980514"
+        ],
+        "settings": {
+          "full-width": true
+        }
+      },
+      "framework--aboutus-page": {
+        "type": "framework--aboutus-page",
+        "blocks": {
+          "1599988204154": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 50,
+              "text_position": "flex-start",
+              "text_align": "left",
+              "text_bg": "",
+              "text_inner_padding_hor": 20,
+              "text_inner_padding_ver": 0,
+              "content_html": "<h1 style=\"margin-bottom: 0;\">It’s time things that are unsaid were said.<\/h1>",
+              "background_img": "shopify:\/\/shop_images\/MOJO_REDCOAT.jpg",
+              "parallax": true,
+              "background_width": 100,
+              "background_pos": "right",
+              "background_float": "left",
+              "background_color": "#ffffff",
+              "link_text": "",
+              "link_url": "",
+              "mobile_flat": false
+            }
+          },
+          "1600155129027": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 50,
+              "text_position": "flex-end",
+              "text_align": "left",
+              "text_bg": "",
+              "text_inner_padding_hor": 15,
+              "text_inner_padding_ver": 0,
+              "content_html": "<h3 style=\"margin-bottom: 0;\"><span>Perimenopause is real.<br>Why do so few women know about it?<\/span><\/h3>",
+              "background_img": "shopify:\/\/shop_images\/MOJO_POLKADOTS_LILAC.jpg",
+              "parallax": false,
+              "background_width": 50,
+              "background_pos": "left",
+              "background_float": "left",
+              "background_color": "#ffffff",
+              "link_text": "",
+              "link_url": "",
+              "mobile_flat": true
+            }
+          },
+          "1599988646288": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 70,
+              "text_position": "center",
+              "text_align": "left",
+              "text_bg": "#ffffff",
+              "text_inner_padding_hor": 5,
+              "text_inner_padding_ver": 10,
+              "content_html": "<div style=\"display: flex; flex-wrap: wrap\">\n<div style=\"width: 50%; padding: 0 5%;\"><p style=\"line-height: 30px;\">For some it starts with a hot flash at 40. For others, irregular periods at 51. But one way or another, menopause happens to every woman. And yet no one is talking about it.* Decades of confidence wobble at the words “hot flash”**  (Don’t even get us started on “vaginal dryness”).<\/p><\/div>\n\n<div style=\"width: 50%; padding: 0 5%;\">\n<p style=\"line-height: 30px;\">That’s where we come in. Mojo Wellbeing offers real solutions. Honest answers. No BS. Just the hot, sweaty truth about moving into menopause. AKA perimenopause. Yep, it’s real. And every woman goes through it. Don’t you think it’s time we started dealing with it?<\/p>\n<p class=\"small\" style=\"padding-top: 10px;\">*Seriously?!\n<br>**But I thought those happened to older women?!<\/p>\n<\/div>\n<\/div>",
+              "background_img": "shopify:\/\/shop_images\/MOJO-PATTER-2.jpg",
+              "parallax": false,
+              "background_width": 35,
+              "background_pos": "left",
+              "background_float": "left",
+              "background_color": "#f9f4f0",
+              "link_text": "",
+              "link_url": "",
+              "mobile_flat": true
+            }
+          },
+          "1599988796113": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 50,
+              "text_position": "flex-start",
+              "text_align": "left",
+              "text_bg": "",
+              "text_inner_padding_hor": 20,
+              "text_inner_padding_ver": 0,
+              "content_html": "<h4>Menopause is natural.<br>\nTalking about it should be, too.<\/h4>\n\n<p style=\"padding-bottom: 10px;\">Join a growing community of women normalizing the conversation around menopause.<\/p>",
+              "background_img": "shopify:\/\/shop_images\/Mojo_website-v5PRESENTED-V1.-home-page.png",
+              "parallax": false,
+              "background_width": 50,
+              "background_pos": "left",
+              "background_float": "right",
+              "background_color": "#ffffff",
+              "link_text": "Join the conversation",
+              "link_url": "",
+              "mobile_flat": true
+            }
+          },
+          "1599988928893": {
+            "type": "text-background",
+            "settings": {
+              "container_height": "55%",
+              "text_container_width": 50,
+              "text_position": "flex-end",
+              "text_align": "left",
+              "text_bg": "",
+              "text_inner_padding_hor": 20,
+              "text_inner_padding_ver": 0,
+              "content_html": "<h4>Products to help you keep your mojo<\/h4>\n\n<p style=\"padding-bottom: 10px;\">Discover our first product, made to keep you cool, calm and collected through menopause.<\/p>",
+              "background_img": "shopify:\/\/shop_images\/MOJO_PACK_3.jpg",
+              "parallax": false,
+              "background_width": 50,
+              "background_pos": "left",
+              "background_float": "left",
+              "background_color": "#ffffff",
+              "link_text": "Learn More",
+              "link_url": "shopify:\/\/pages\/product",
+              "mobile_flat": true
+            }
+          }
+        },
+        "block_order": [
+          "1599988204154",
+          "1600155129027",
+          "1599988646288",
+          "1599988796113",
+          "1599988928893"
+        ],
+        "settings": {
+          "full-width": true
+        }
+      },
+      "framework--featured-grid": {
+        "type": "framework--featured-grid",
+        "settings": {
+          "background-color": "light",
+          "spacing": true,
+          "alternative-color": false,
+          "text-position": "center",
+          "container-width": 4,
+          "width": 4,
+          "mobile-width": "2",
+          "title": "Featured grid",
+          "subtitle": "",
+          "link-url": "",
+          "link-text": ""
+        }
+      },
+      "1600149745300": {
+        "type": "text-background",
+        "settings": {
+          "full-width": true,
+          "container_height": "55%",
+          "text_container_width": 50,
+          "text_position": "flex-start",
+          "text_align": "left",
+          "content_html": "<h1><span>Menopause,<br>\nmeet your match<\/span><\/h1>\n<h6>Navigate through menopause with your mojo intact.<\/h6>\n<br>\n<button onclick=\"Privy('show', 1756782);\">JOIN THE WAITLIST<\/button>",
+          "text_bg": "",
+          "text_inner_padding_hor": 20,
+          "text_inner_padding_ver": 0,
+          "background_img": "shopify:\/\/shop_images\/Mojo_website-v5PRESENTED-V1.-home-page.png",
+          "parallax": true,
+          "background_width": 100,
+          "background_pos": "left",
+          "background_float": "left",
+          "background_color": "#ffffff",
+          "link_text": "",
+          "link_url": "",
+          "mobile_flat": false
+        }
+      },
+      "1600149863116": {
+        "type": "text-background",
+        "settings": {
+          "full-width": true,
+          "container_height": "55%",
+          "text_container_width": 70,
+          "text_position": "center",
+          "text_align": "center",
+          "content_html": "<h3><span>Menopause is confusing. <br>We've got answers.<br>\nAnd better yet, we've got solutions.<\/span><\/h3>",
+          "text_bg": "#ffffff",
+          "text_inner_padding_hor": 2,
+          "text_inner_padding_ver": 10,
+          "background_img": "shopify:\/\/shop_images\/MOJO-PATTER-2.jpg",
+          "parallax": false,
+          "background_width": 35,
+          "background_pos": "left",
+          "background_float": "left",
+          "background_color": "#f9f4f0",
+          "link_text": "Why we exist",
+          "link_url": "shopify:\/\/pages\/why-we-exist",
+          "mobile_flat": true
+        }
+      },
+      "1600149998285": {
+        "type": "text-background",
+        "settings": {
+          "full-width": true,
+          "container_height": "55%",
+          "text_container_width": 50,
+          "text_position": "flex-end",
+          "text_align": "left",
+          "content_html": "<h4>Our first product is a Hot Flash Relief + Multivitamin Supplement to help you keep your cool through menopause.<\/h4>\n\n<p style=\"line-height: 30px; padding-bottom: 10px;\">* Clinically proven to provide relief for hot flashes<br>* Vitamin D &amp; calcium to support bone health<br>* Packed with vitamin A, C, E and F<br>* Contains the mood-balancing adaptogen ashwagandha<br>* Vegan, natural and hormone-free<\/p>",
+          "text_bg": "",
+          "text_inner_padding_hor": 20,
+          "text_inner_padding_ver": 0,
+          "background_img": "shopify:\/\/shop_images\/MOJO_PACK_3.jpg",
+          "parallax": false,
+          "background_width": 50,
+          "background_pos": "left",
+          "background_float": "left",
+          "background_color": "#ffffff",
+          "link_text": "Learn More",
+          "link_url": "shopify:\/\/pages\/product",
+          "mobile_flat": true
+        }
+      }
+    },
+    "content_for_index": [
+      "1600149745300",
+      "1600149863116",
+      "1600149998285"
+    ]
+  },
+  "presets": {
+    "Bloom": {
+      "color--accent": "#c499fb",
+      "bg-color--body": "#ffffff",
+      "color--body": "#212121",
+      "color--alternative": "#ffffff",
+      "bg-color--panel": "#f0ecea",
+      "color--important": "#ca2f01",
+      "color--button": "#ffffff",
+      "bg-color--button": "#212121",
+      "color--header": "#212121",
+      "color--footer": "",
+      "bg-color--footer": "",
+      "bg-color--announcement": "#e6d4ff",
+      "announcement--alternative-text": false,
+      "color--collection--title": "#ffffff",
+      "typography--heading": "zurich_extended_n7",
+      "typography--heading--uppercase": false,
+      "typography--heading--size": "small",
+      "typography--accent": "helvetica_n4",
+      "typography--paragraph": "karla_n4",
+      "typography--paragraph--size": "medium",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo-height-range": 50,
+            "menu": "main-menu"
+          }
+        },
+        "framework--footer": {
+          "type": "framework--footer",
+          "blocks": {
+            "1584642445690": {
+              "type": "about",
+              "settings": {
+                "about-title": "",
+                "text": "<p>A short summary about your brand.<\/p>\n<p>&copy; Your brand name.<\/p>",
+                "subscribe--show-social-icons": true
+              }
+            },
+            "1584642448228": {
+              "type": "menu",
+              "settings": {
+                "menu-title": "",
+                "menu": "footer"
+              }
+            },
+            "1584642450700": {
+              "type": "subscribe",
+              "settings": {
+                "newsletter--heading": "",
+                "newsletter--info": "<p>Sign up to our mailing list<\/p>",
+                "subscribe--show-newsletter": true
+              }
+            }
+          },
+          "block_order": [
+            "1584642445690",
+            "1584642448228",
+            "1584642450700"
+          ],
+          "settings": {
+            "show-currency-selector": true,
+            "show-locale-selector": true,
+            "show-payment-icons": true
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "smart-payment-button": true,
+            "variant-style": "dropdowns",
+            "swatches-enabled": false,
+            "product-unavailable-form-show": false,
+            "low-in-stock-amount": 0,
+            "modal-enabled": true,
+            "hide-variant-media": false,
+            "loop-enabled": false,
+            "product-size-chart-enabled": false,
+            "product-size-chart-option": "size",
+            "product-size-chart-page-content": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "show-featured-image": true,
+            "show-vendor": false,
+            "products-per-row-range": 3
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "enabled": true,
+            "home-page-only": false,
+            "icon": "",
+            "text": "Add your announcement message with a bit more length",
+            "link": ""
+          }
+        },
+        "1522371405349": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": true,
+            "background-color": "accent",
+            "text-position": "left",
+            "text-width": "small",
+            "overlap": false,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371486135": {
+          "type": "index--collection",
+          "settings": {
+            "collection": "",
+            "max-products-range": 5
+          }
+        },
+        "1522371573233": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": false,
+            "background-color": "light",
+            "text-position": "center",
+            "text-width": "large",
+            "overlap": true,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371666643": {
+          "type": "framework--newsletter",
+          "settings": {
+            "background-color": "none",
+            "heading": "Subscribe to our newsletter",
+            "newsletter--subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1522371685670": {
+          "type": "framework--featured-text",
+          "settings": {
+            "background-color": "none",
+            "heading": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "1522371696540": {
+          "type": "framework--featured-video",
+          "settings": {
+            "video-url": "",
+            "image": "",
+            "full-width": true,
+            "background-color": "light",
+            "section-height": "regular",
+            "darken-video": true,
+            "alt-text": true,
+            "heading": "Video",
+            "sub-heading": "Add a subheading here",
+            "button-text": "button",
+            "button-url": ""
+          }
+        },
+        "1522371710166": {
+          "type": "framework--map",
+          "settings": {
+            "api-key": "",
+            "map-address": "391 Sutter St, San Francisco",
+            "background-color": "light",
+            "theme": "grayscale",
+            "heading": "Map",
+            "address": "<p>391 Sutter St,<br>San Francisco<br>CA 94108, USA<br><br>(555) 555-5555<\/p>",
+            "hours": "<p><strong>Monday - Friday<\/strong><br>12pm - 8pm<br><br><strong>Saturday - Sunday<\/strong><br>12pm - 5pm<\/p>",
+            "image": ""
+          }
+        },
+        "1522371753814": {
+          "type": "slideshow",
+          "blocks": {
+            "1522371753814-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            },
+            "1522371753814-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            }
+          },
+          "block_order": [
+            "1522371753814-0",
+            "1522371753814-1"
+          ],
+          "settings": {
+            "full-width": true,
+            "autoplay": false,
+            "transition_style": "default",
+            "rotate-frequency-range": 7
+          }
+        },
+        "1522371819571": {
+          "type": "framework--featured-grid",
+          "blocks": {
+            "1522371819571-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-2": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-3": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371970926": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371976471": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            }
+          },
+          "block_order": [
+            "1522371819571-0",
+            "1522371819571-1",
+            "1522371819571-2",
+            "1522371819571-3",
+            "1522371970926",
+            "1522371976471"
+          ],
+          "settings": {
+            "background-color": "light",
+            "spacing": true,
+            "alternative-color": false,
+            "text-position": "center",
+            "container-width": 4,
+            "width": 3,
+            "mobile-width": "2",
+            "title": "Featured grid",
+            "subtitle": "",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        }
+      },
+      "content_for_index": [
+        "1522371753814",
+        "1522371573233",
+        "1522371819571",
+        "1522371696540",
+        "1522371685670",
+        "1522371486135",
+        "1522371405349",
+        "1522371666643",
+        "1522371710166"
+      ]
+    },
+    "Fashion": {
+      "color--accent": "#f9cfd6",
+      "bg-color--body": "#ffffff",
+      "color--body": "#212121",
+      "color--alternative": "#ffffff",
+      "bg-color--panel": "rgba(0,0,0,0)",
+      "color--important": "#ca2f01",
+      "color--button": "#ffffff",
+      "bg-color--button": "#212121",
+      "color--header": "#212121",
+      "color--footer": "#212121",
+      "bg-color--footer": "",
+      "bg-color--announcement": "#f9cfd6",
+      "announcement--alternative-text": false,
+      "color--collection--title": "#ffffff",
+      "typography--heading": "trade_gothic_n4",
+      "typography--heading--uppercase": true,
+      "typography--heading--size": "small",
+      "typography--accent": "madera_n5",
+      "typography--paragraph": "roboto_n4",
+      "typography--paragraph--size": "medium",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo-height-range": 50,
+            "menu": "main-menu"
+          }
+        },
+        "framework--footer": {
+          "type": "framework--footer",
+          "blocks": {
+            "1584642445690": {
+              "type": "about",
+              "settings": {
+                "about-title": "",
+                "text": "<p>A short summary about your brand.<\/p>\n<p>&copy; Your brand name.<\/p>",
+                "subscribe--show-social-icons": true
+              }
+            },
+            "1584642448228": {
+              "type": "menu",
+              "settings": {
+                "menu-title": "",
+                "menu": "footer"
+              }
+            },
+            "1584642450700": {
+              "type": "subscribe",
+              "settings": {
+                "newsletter--heading": "",
+                "newsletter--info": "<p>Sign up to our mailing list<\/p>",
+                "subscribe--show-newsletter": true
+              }
+            }
+          },
+          "block_order": [
+            "1584642445690",
+            "1584642448228",
+            "1584642450700"
+          ],
+          "settings": {
+            "show-currency-selector": true,
+            "show-locale-selector": true,
+            "show-payment-icons": true
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "smart-payment-button": true,
+            "variant-style": "dropdowns",
+            "swatches-enabled": false,
+            "product-unavailable-form-show": false,
+            "low-in-stock-amount": 0,
+            "modal-enabled": true,
+            "hide-variant-media": false,
+            "loop-enabled": false,
+            "product-size-chart-enabled": false,
+            "product-size-chart-option": "size",
+            "product-size-chart-page-content": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "show-featured-image": true,
+            "show-vendor": false,
+            "products-per-row-range": 3
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "enabled": true,
+            "home-page-only": false,
+            "icon": "",
+            "text": "Add your announcement message with a bit more length",
+            "link": ""
+          }
+        },
+        "1522371405349": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": true,
+            "background-color": "accent",
+            "text-position": "left",
+            "text-width": "small",
+            "overlap": false,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371486135": {
+          "type": "index--collection",
+          "settings": {
+            "collection": "",
+            "max-products-range": 5
+          }
+        },
+        "1522371573233": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": false,
+            "background-color": "light",
+            "text-position": "center",
+            "text-width": "large",
+            "overlap": true,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371666643": {
+          "type": "framework--newsletter",
+          "settings": {
+            "background-color": "none",
+            "heading": "Subscribe to our newsletter",
+            "newsletter--subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1522371685670": {
+          "type": "framework--featured-text",
+          "settings": {
+            "background-color": "none",
+            "heading": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "1522371696540": {
+          "type": "framework--featured-video",
+          "settings": {
+            "video-url": "",
+            "image": "",
+            "full-width": true,
+            "background-color": "light",
+            "section-height": "regular",
+            "darken-video": true,
+            "alt-text": true,
+            "heading": "Video",
+            "sub-heading": "Add a subheading here",
+            "button-text": "button",
+            "button-url": ""
+          }
+        },
+        "1522371710166": {
+          "type": "framework--map",
+          "settings": {
+            "api-key": "",
+            "map-address": "391 Sutter St, San Francisco",
+            "background-color": "light",
+            "theme": "grayscale",
+            "heading": "Map",
+            "address": "<p>391 Sutter St,<br>San Francisco<br>CA 94108, USA<br><br>(555) 555-5555<\/p>",
+            "hours": "<p><strong>Monday - Friday<\/strong><br>12pm - 8pm<br><br><strong>Saturday - Sunday<\/strong><br>12pm - 5pm<\/p>",
+            "image": ""
+          }
+        },
+        "1522371753814": {
+          "type": "slideshow",
+          "blocks": {
+            "1522371753814-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            },
+            "1522371753814-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            }
+          },
+          "block_order": [
+            "1522371753814-0",
+            "1522371753814-1"
+          ],
+          "settings": {
+            "full-width": true,
+            "autoplay": false,
+            "transition_style": "default",
+            "rotate-frequency-range": 7
+          }
+        },
+        "1522371819571": {
+          "type": "framework--featured-grid",
+          "blocks": {
+            "1522371819571-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-2": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-3": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371970926": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371976471": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            }
+          },
+          "block_order": [
+            "1522371819571-0",
+            "1522371819571-1",
+            "1522371819571-2",
+            "1522371819571-3",
+            "1522371970926",
+            "1522371976471"
+          ],
+          "settings": {
+            "background-color": "light",
+            "spacing": true,
+            "alternative-color": false,
+            "text-position": "center",
+            "container-width": 4,
+            "width": 3,
+            "mobile-width": "2",
+            "title": "Featured grid",
+            "subtitle": "",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        }
+      },
+      "content_for_index": [
+        "1522371753814",
+        "1522371573233",
+        "1522371685670",
+        "1522371819571",
+        "1522371696540",
+        "1522371486135",
+        "1522371405349",
+        "1522371666643",
+        "1522371710166"
+      ]
+    },
+    "Books": {
+      "color--accent": "#197bbd",
+      "bg-color--body": "#ffffff",
+      "color--body": "#212121",
+      "color--alternative": "#ffffff",
+      "bg-color--panel": "#ffffff",
+      "color--important": "#ca2f01",
+      "color--button": "#ffffff",
+      "bg-color--button": "#212121",
+      "color--header": "#212121",
+      "color--footer": "#212121",
+      "bg-color--footer": "",
+      "bg-color--announcement": "#212121",
+      "announcement--alternative-text": true,
+      "color--collection--title": "#ffffff",
+      "typography--heading": "itc_caslon_no_224_n5",
+      "typography--heading--uppercase": false,
+      "typography--heading--size": "large",
+      "typography--accent": "avenir_next_n5",
+      "typography--paragraph": "itc_gamma_n4",
+      "typography--paragraph--size": "large",
+      "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "logo": "",
+            "logo-height-range": 50,
+            "menu": "main-menu"
+          }
+        },
+        "framework--footer": {
+          "type": "framework--footer",
+          "blocks": {
+            "1584642445690": {
+              "type": "about",
+              "settings": {
+                "about-title": "",
+                "text": "<p>A short summary about your brand.<\/p>\n<p>&copy; Your brand name.<\/p>",
+                "subscribe--show-social-icons": true
+              }
+            },
+            "1584642448228": {
+              "type": "menu",
+              "settings": {
+                "menu-title": "",
+                "menu": "footer"
+              }
+            },
+            "1584642450700": {
+              "type": "subscribe",
+              "settings": {
+                "newsletter--heading": "",
+                "newsletter--info": "<p>Sign up to our mailing list<\/p>",
+                "subscribe--show-newsletter": true
+              }
+            }
+          },
+          "block_order": [
+            "1584642445690",
+            "1584642448228",
+            "1584642450700"
+          ],
+          "settings": {
+            "show-currency-selector": true,
+            "show-locale-selector": true,
+            "show-payment-icons": true
+          }
+        },
+        "product": {
+          "type": "product",
+          "settings": {
+            "smart-payment-button": true,
+            "variant-style": "dropdowns",
+            "swatches-enabled": false,
+            "product-unavailable-form-show": false,
+            "low-in-stock-amount": 0,
+            "modal-enabled": true,
+            "hide-variant-media": false,
+            "loop-enabled": false,
+            "product-size-chart-enabled": false,
+            "product-size-chart-option": "size",
+            "product-size-chart-page-content": ""
+          }
+        },
+        "collection": {
+          "type": "collection",
+          "settings": {
+            "show-featured-image": true,
+            "show-vendor": false,
+            "products-per-row-range": 3
+          }
+        },
+        "announcement": {
+          "type": "announcement",
+          "settings": {
+            "enabled": true,
+            "home-page-only": false,
+            "icon": "",
+            "text": "Add your announcement message with a bit more length",
+            "link": ""
+          }
+        },
+        "1522371405349": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": true,
+            "background-color": "accent",
+            "text-position": "left",
+            "text-width": "small",
+            "overlap": false,
+            "transparent-overlap": false,
+            "alternative-color": true,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371486135": {
+          "type": "index--collection",
+          "settings": {
+            "collection": "",
+            "max-products-range": 5
+          }
+        },
+        "1522371573233": {
+          "type": "framework--featured-content",
+          "settings": {
+            "full-width": false,
+            "background-color": "light",
+            "text-position": "center",
+            "text-width": "large",
+            "overlap": true,
+            "transparent-overlap": false,
+            "alternative-color": false,
+            "image": "",
+            "title": "Image with text",
+            "description": "<p>Use a combination of image and text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store<\/p>",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        },
+        "1522371666643": {
+          "type": "framework--newsletter",
+          "settings": {
+            "background-color": "none",
+            "heading": "Subscribe to our newsletter",
+            "newsletter--subheading": "<p>A short sentence describing what someone will receive by subscribing<\/p>"
+          }
+        },
+        "1522371685670": {
+          "type": "framework--featured-text",
+          "settings": {
+            "background-color": "none",
+            "heading": "Talk about your brand",
+            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>"
+          }
+        },
+        "1522371696540": {
+          "type": "framework--featured-video",
+          "settings": {
+            "video-url": "",
+            "image": "",
+            "full-width": true,
+            "background-color": "light",
+            "section-height": "regular",
+            "darken-video": true,
+            "alt-text": true,
+            "heading": "Video",
+            "sub-heading": "Add a subheading here",
+            "button-text": "button",
+            "button-url": ""
+          }
+        },
+        "1522371710166": {
+          "type": "framework--map",
+          "settings": {
+            "api-key": "",
+            "map-address": "391 Sutter St, San Francisco",
+            "background-color": "light",
+            "theme": "grayscale",
+            "heading": "Map",
+            "address": "<p>391 Sutter St,<br>San Francisco<br>CA 94108, USA<br><br>(555) 555-5555<\/p>",
+            "hours": "<p><strong>Monday - Friday<\/strong><br>12pm - 8pm<br><br><strong>Saturday - Sunday<\/strong><br>12pm - 5pm<\/p>",
+            "image": ""
+          }
+        },
+        "1522371753814": {
+          "type": "slideshow",
+          "blocks": {
+            "1522371753814-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            },
+            "1522371753814-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "slide-title": "Slideshow",
+                "slide-tagline": "Introduce your store or campaign with this slideshow section.",
+                "slide-link-url": "",
+                "slide-link-title": "Link to content",
+                "slide-y-pos": "middle",
+                "slide-x-pos": "left",
+                "slide-text-pos": "text-left"
+              }
+            }
+          },
+          "block_order": [
+            "1522371753814-0",
+            "1522371753814-1"
+          ],
+          "settings": {
+            "full-width": true,
+            "autoplay": false,
+            "transition_style": "default",
+            "rotate-frequency-range": 7
+          }
+        },
+        "1522371819571": {
+          "type": "framework--featured-grid",
+          "blocks": {
+            "1522371819571-0": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-1": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-2": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371819571-3": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371970926": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            },
+            "1522371976471": {
+              "type": "image",
+              "settings": {
+                "image": "",
+                "title": "Grid image",
+                "link-url": "",
+                "link-text": "View more"
+              }
+            }
+          },
+          "block_order": [
+            "1522371819571-0",
+            "1522371819571-1",
+            "1522371819571-2",
+            "1522371819571-3",
+            "1522371970926",
+            "1522371976471"
+          ],
+          "settings": {
+            "background-color": "light",
+            "spacing": true,
+            "alternative-color": false,
+            "text-position": "center",
+            "container-width": 4,
+            "width": 3,
+            "mobile-width": "2",
+            "title": "Featured grid",
+            "subtitle": "",
+            "link-url": "",
+            "link-text": "View more"
+          }
+        }
+      },
+      "content_for_index": [
+        "1522371753814",
+        "1522371573233",
+        "1522371819571",
+        "1522371685670",
+        "1522371696540",
+        "1522371486135",
+        "1522371405349",
+        "1522371666643",
+        "1522371710166"
+      ]
+    }
+  }
+}

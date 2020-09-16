@@ -1,0 +1,63 @@
+{% unless source %}
+  {% assign source = partial--mailing-list %}
+{% endunless %}
+
+<div class="partial--mailing-list" id="newsletter">
+
+  {% assign newsletter_subtitle = 'general.mailing_list.subtitle' | t %}
+
+  {% form 'customer', id: 'newsletter_contact_form' %}
+    {% if form.posted_successfully? and source != 'popup' %}
+      <p class="success feedback">{{ 'general.mailing_list.success_message' | t }}</p>
+    {% endif %}
+    {% if form.errors and source != 'popup' %}
+      <p class="error feedback">
+      {% for field in form.errors %}
+        {{ field }} {{ form.errors.messages[field] }}
+      {% endfor %}
+      </p>
+    {% endif %}
+
+    <input
+      type="hidden"
+      name="contact[tags]"
+      value="{{ source }}"
+    />
+    <input
+      type="hidden"
+      name="contact[first_name]"
+      value="Subscriber"
+    />
+    <input
+      type="hidden"
+      name="contact[last_name]"
+      value="Newsletter"
+    />
+    <label for="mailing-list-email" data-item="hidden-text">
+      {{ 'general.mailing_list.placeholder' | t }}
+    </label>
+    <input
+      type="email"
+      id="mailing-list-email"
+      placeholder="{{ 'general.mailing_list.placeholder' | t }}"
+      name="contact[email]"
+      required
+    />
+    <input
+      type="submit"
+      class="font--button prefix"
+      id="email-submit"
+      value="{{ 'general.mailing_list.button' | t }}"
+      name="subscribe"
+    />
+
+    {% if form.posted_successfully? or form.errors %}
+      <script>window.location.hash = '#newsletter';</script>
+    {% endif %}
+
+    <div data-item="hidden-text">
+      {% comment %} remove the below line to display reCAPTCHA badge {% endcomment %}
+      {{ 'shopify.online_store.spam_detection.disclaimer_html' | t }}
+    </div>
+  {% endform %}
+</div>

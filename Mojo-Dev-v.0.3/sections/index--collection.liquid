@@ -1,0 +1,137 @@
+{% comment %} Translations {% endcomment %}
+{% assign no_content_t = 'home.onboarding.no_content' | t %}
+{% assign more_details_t = 'home.more_details' | t %}
+{% assign view_collection_t = 'home.view_collection' | t %}
+{% assign title_t = 'collections.placeholder.title' | t %}
+
+{% comment %} Variables {% endcomment %}
+{% assign bg_color = settings.home--collection--bg-color %}
+{% assign collection = section.settings.collection %}
+{% assign collection = collections[collection] %}
+{% assign num_products = section.settings.max-products-range %}
+
+{% assign placeholders_active = true %}
+{% if collection.handle.size > 0 or section.settings.image %}
+  {% assign placeholders_active = false %}
+{% endif %}
+
+{% if placeholders_active %}
+  {% assign collection_title = 'collections.placeholder.collection_title' | t %}
+{% else %}
+  {% assign collection_title = collection.title %}
+{% endif %}
+
+<div
+  class="index--collection--root"
+  data-section-id="{{ section.id }}"
+  data-section-type="index_collection"
+  data-js-class="IndexCollection"
+>
+  <div
+    class="fw--slider"
+    data-js-class="FrameworkSlider"
+    data-navigation="true"
+    data-pagination="false"
+    data-pagination-numbers="false"
+  >
+
+    {% if collection.handle.size > 0 and collection.products.size == 0 %}
+      <div class="index--collection--slide-container">
+        <h3 class="index--collection--error">
+          {{ no_content_t }}
+        </h3>
+      </div>
+
+    {% elsif placeholders_active %}
+      {% for i in (1..num_products) %}
+        <div class="index--collection--slide-container">
+          <div class="index--collection--slide">
+            {% assign placeholder_index = i | modulo: 5 | plus: 1 %}
+            {%
+              render "framework--placeholder",
+              type: "product",
+              aspect_ratio: 1,
+              placeholder_index: placeholder_index
+            %}
+
+            <div class="index--collection--header">
+              <h2 class="index--collection--title" data-item="section-heading">
+                {{ title_t }}
+              </h2>
+              <a data-item="button" href="#">
+                <div>{{ more_details_t }}</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+    {% else %}
+      {% for product in collection.products limit: num_products %}
+        <div class="index--collection--slide-container">
+          <div class="index--collection--slide">
+            {% assign image = product.featured_media.preview_image %}
+
+            <a href="{{ product.url | within: collection }}" aria-label="{{ product.title }}">
+              {%
+                render "framework--image",
+                image: image,
+                max_height: 450
+              %}
+            </a>
+
+            <div class="index--collection--header">
+              <h2 class="index--collection--title" data-item="section-heading">
+                {{ product.title }}
+              </h2>
+              <a data-item="button" href="{{ product.url | within: collection }}">
+                <div>{{ more_details_t }}</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+      <div class="index--collection--slide-container">
+        <div class="index--collection--header">
+          <h2 class="index--collection--title" data-item="section-heading">
+            {{ collection_title }}
+          </h2>
+          <a data-item="button" href="{{ collection.url }}">
+            <div>{{ view_collection_t }}</div>
+          </a>
+        </div>
+      </div>
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "label": "Amount of products to show",
+      "id": "max-products-range",
+      "type": "range",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
